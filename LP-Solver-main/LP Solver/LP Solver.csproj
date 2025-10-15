@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DFACF39-B3F5-40C8-81D1-673ADDE83A14}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LP_Solver</RootNamespace>
+    <AssemblyName>LP Solver</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BranchAndBoundKnapsack.cs" />
+    <Compile Include="Core\BranchAndBoundSimplex.cs" />
+    <Compile Include="Core\CuttingPlane.cs" />
+    <Compile Include="Core\ISolver.cs" />
+    <Compile Include="Core\LpModel.cs" />
+    <Compile Include="Core\LPResult.cs" />
+    <Compile Include="Core\PrimalSimplex.cs" />
+    <Compile Include="Core\RevisedSimplex.cs" />
+    <Compile Include="Core\SensitivityAnalysis.cs" />
+    <Compile Include="Core\SensitivityAnalysisMenu.cs" />
+    <Compile Include="Core\SpecialCasesHandler.cs" />
+    <Compile Include="Core\StringBuilderReporter.cs" />
+    <Compile Include="IO\ModelWriter.cs" />
+    <Compile Include="IO\ReadFile.cs" />
+    <Compile Include="Menu\BonusNonLinearSolverMenu.cs" />
+    <Compile Include="Menu\DualityMenu.cs" />
+    <Compile Include="Menu\MainMenu.cs" />
+    <Compile Include="Menu\SensitivityAnalysisMenu.cs" />
+    <Compile Include="Menu\SolveModelMenu.cs" />
+    <Compile Include="Menu\SpecialCasesMenu.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Bonus\README.md" />
+    <Compile Include="Core\SolverArtifacts.cs" />
+    <None Include="Examples\README.md" />
+    <None Include="IO\README.md" />
+    <None Include="Menu\README.md" />
+    <None Include="Tests\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

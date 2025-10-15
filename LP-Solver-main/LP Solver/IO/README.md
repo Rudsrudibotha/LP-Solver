@@ -1,0 +1,1 @@
+InputParser, OutputWriter, FileHandler responsibilities; handles reading/writing files and validating input.

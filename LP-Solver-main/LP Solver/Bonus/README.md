@@ -1,0 +1,1 @@
+Optional features like Dual Simplex, Graphical Solver, and Sensitivity Analysis.
